@@ -1,0 +1,60 @@
+/* styles.css */
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+#start {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+#jeopardy {
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+#jeopardy th, #jeopardy td {
+  border: 1px solid #ddd;
+  padding: 15px;
+  text-align: center;
+  background-color: #fff;
+}
+
+#jeopardy th {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+#jeopardy td:hover {
+  background-color: #f2f2f2;
+  cursor: pointer;
+}
+
+#spin-container {
+  display: none;
+}
+
+.fa-spinner {
+  font-size: 50px;
+  color: #333;
+  animation: spin 1s infinite linear;
+}
+

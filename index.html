@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Jeopardy</title>
+  <link href="https://fonts.googleapis.com/css?family=Copse&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="app.css">
+  <style>
+    /* Additional CSS styles for the loading indicator */
+    #spin-container {
+      display: none; /* Hide by default */
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1000; /* Ensure it's above other content */
+    }
+
+    .loading {
+      display: inline-block;
+      font-size: 40px;
+    }
+
+    /* Additional CSS styles for error messages */
+    #error-message {
+      display: none; /* Hide by default */
+      color: red;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <h1>Jeopardy!</h1>
+  <nav>
+    <button id="start" aria-label="Start game">Start!</button>
+  </nav>
+</header>
+
+<div id="spin-container">
+  <div class="loading">
+    <i class="fa fa-spinner fa-spin"></i> Loading...
+  </div>
+</div>
+
+<table id="jeopardy">
+  <thead></thead>
+  <tbody></tbody>
+</table>
+
+<div id="error-message" aria-live="polite"></div>
+
+<script src="https://unpkg.com/jquery"></script>
+<script src="https://unpkg.com/axios/dist/axios.js"></script>
+<script src="https://unpkg.com/lodash"></script>
+
+
+<script>
+  // JavaScript for showing/hiding the loading spinner
+  function showLoading() {
+    document.getElementById('spin-container').style.display = 'block';
+  }
+
+  function hideLoading() {
+    document.getElementById('spin-container').style.display = 'none';
+  }
+
+  // JavaScript for showing error messages
+  function showError(message) {
+    const errorMessage = document.getElementById('error-message');
+    errorMessage.textContent = message;
+    errorMessage.style.display = 'block';
+  }
+
+  function clearError() {
+    document.getElementById('error-message').style.display = 'none';
+  }
+</script>
+<script src="app.js"></script>
+
+</body>
+</html>
